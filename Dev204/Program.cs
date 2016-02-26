@@ -10,14 +10,15 @@ namespace Dev204
     {
         static void Main(string[] args)
         {
+
             #region Mod1
 
-          
+
             //Mod1
             string FirstName = "Rahmo";
             string LastName = "Alzahrani";
             DateTime Birthdate = new DateTime(
-                1987,06,28);
+                1987, 06, 28);
             string AddressLine1 = "5445 N Sheridan";
             string AddressLine2 = "Edgewater";
             string City = "Chicago";
@@ -35,7 +36,7 @@ namespace Dev204
                               "State :" + State + "\n" +
                               "Province :" + Province + "\n" +
                               "Zip'\'Postal :" + Zip_Postal + "\n" +
-                              "Country :" + Country + "\n" 
+                              "Country :" + Country + "\n"
 
 
                               );
@@ -43,7 +44,7 @@ namespace Dev204
 
             #region Mod2
 
-           
+
             for (int i = 0; i <= 7; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -55,17 +56,129 @@ namespace Dev204
                     else
                     {
                         Console.Write("OX");
-                    }    
+                    }
                 }
                 Console.Write("\n");
-      } 
+            }
             #endregion
 
+            #region Mod3
+  GetStudentInformation();
+            GetDegreeInformation();
+            GetProgramInformation();
+            GetTeacherInformation();
+            GetCourseInformation();
 
-             Console.ReadLine(); // This line to keep the consol runninf to veiw the output.
+            //calling the method to throw an exception. 
+            ValidateStudent();
+            #endregion
+          
+
+            Console.ReadLine(); // This line to keep the consol running to veiw the output.
 
 
 
         }
+        #region Mod3HelpingMethods
+
+       
+        private static void ValidateStudent()
+        {
+            //an exception will be thrown
+            throw new NotImplementedException();
+        }
+
+        static void GetStudentInformation()
+        {
+            Console.WriteLine("Enter the student's first name: ");
+            string firstName = Console.ReadLine();
+
+            Console.WriteLine("Enter the student's last name");
+            string lastName = Console.ReadLine();
+
+            Console.WriteLine("Enter the student's Birthdate: ");
+            string Birthdate = Console.ReadLine();
+
+            Console.WriteLine("Enter the student's Country");
+            string Country = Console.ReadLine();
+
+            PrintStudentDetails(firstName, lastName, Birthdate);
+
+        }
+
+        static void PrintStudentDetails(string first, string last, string birthday)
+        {
+            Console.WriteLine("{0} {1} was born on: {2}", first, last, birthday);
+        }
+
+        static void GetTeacherInformation()
+        {
+            Console.WriteLine("Enter the Teacher's first name: ");
+            string firstName = Console.ReadLine();
+
+            Console.WriteLine("Enter the Teacher's last name");
+            string lastName = Console.ReadLine();
+
+            Console.WriteLine("Enter the Teacher's Country");
+            string Country = Console.ReadLine();
+            PrintTeacherDetails(firstName, lastName, Country);
+
+        }
+        static void PrintTeacherDetails(string first, string last, string Country)
+        {
+            Console.WriteLine("{0} {1} is from: {2}", first, last, Country);
+        }
+
+        static void GetProgramInformation()
+        {
+            Console.WriteLine("Enter the  Program's  name: ");
+            string ProgramName = Console.ReadLine();
+
+            Console.WriteLine("Enter the Department Head");
+            string DepartmentHead = Console.ReadLine();
+
+            Console.WriteLine("Enter the Degrees: ");
+            string Degrees = Console.ReadLine();
+            PrinProgramDetails(ProgramName, DepartmentHead, Degrees);
+
+        }
+        static void PrinProgramDetails(string name, string head, string degree)
+        {
+            Console.WriteLine("the program {0} has the head {1} with a degree in {2}", name, head, degree);
+        }
+
+        static void GetDegreeInformation()
+        {
+            Console.WriteLine("Enter the  Degree's  name: ");
+            string DegreeName = Console.ReadLine();
+
+            Console.WriteLine("Enter the Credits required");
+            string Creditsrequired = Console.ReadLine();
+            PrintDegreeDetails(DegreeName, Creditsrequired.ToString());
+
+        }
+        static void PrintDegreeDetails(string name, string Credits)
+        {
+            Console.WriteLine("The degree name is {0} with  {1} credits to finsih,.", name, Credits);
+        }
+        static void GetCourseInformation()
+        {
+            Console.WriteLine("Enter the  Course's  name: ");
+            string CourseName = Console.ReadLine();
+
+            Console.WriteLine("Enter the  Course's  Teacher: ");
+            string CourseTeacher = Console.ReadLine();
+
+            Console.WriteLine("Enter the course Credits required");
+            string Creditsrequired = Console.ReadLine();
+            PrintCourseDetails(CourseName, CourseTeacher, Creditsrequired.ToString());
+
+        }
+
+        static void PrintCourseDetails(string name, string courseTeacher, string CreditsReq)
+        {
+            Console.WriteLine("THe course {0} has the teacher {1} with credits of: {2}", name, courseTeacher, CreditsReq);
+        }
+        #endregion
     }
 }
