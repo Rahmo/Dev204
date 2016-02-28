@@ -39,7 +39,8 @@ namespace Dev204
                               "Country :" + Country + "\n"
 
 
-                              );
+                );
+
             #endregion
 
             #region Mod2
@@ -49,7 +50,7 @@ namespace Dev204
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if (i % 2 == 0)
+                    if (i%2 == 0)
                     {
                         Console.Write("XO");
                     }
@@ -60,28 +61,114 @@ namespace Dev204
                 }
                 Console.Write("\n");
             }
+
             #endregion
 
             #region Mod3
-  GetStudentInformation();
+
+            GetStudentInformation();
             GetDegreeInformation();
             GetProgramInformation();
             GetTeacherInformation();
             GetCourseInformation();
 
             //calling the method to throw an exception. 
-            ValidateStudent();
+            //  ValidateStudent();
+
             #endregion
-          
+
+            #region Mod4
+            // The index starts from 0 
+            Student[] structStudents = new Student[4];
+            structStudents[0].FirstName = "Rahmo";
+            structStudents[0].Country = "USA";
+            structStudents[0].LastName = "Alzahrani";
+            structStudents[2].FirstName = "John";
+            structStudents[2].Country = "UK";
+
+            Console.WriteLine("The First assigned student information : \n First Name " + structStudents[0].FirstName 
+                + "\n Last Name : "+ structStudents[0].LastName + " \n The Student country is from : " + structStudents[0].Country +
+                "\n ****** \n " +
+                "The Second assigned student information : \n First Name " + structStudents[2].FirstName
+                + " \n The Student country is from : " + structStudents[2].Country
+                );
+
+            #endregion
+
+
 
             Console.ReadLine(); // This line to keep the consol running to veiw the output.
 
 
 
         }
+
+
+        public struct Student
+        {
+            // This is the student constructor.
+            public Student(string firstName, string lastName, string birthdate, string country)
+            {
+                this.FirstName = firstName;
+                this.LastName = lastName;
+                this.Birthdate = birthdate;
+                this.Country = country;
+            }
+            // These statements declare the struct fields
+            public string FirstName;
+            public string LastName;
+            public string Birthdate;
+            public string Country;
+        }
+        public struct Teacher
+        {
+            // This is the student constructor.
+            public Teacher(string firstName, string lastName, string country)
+            {
+                this.FirstName = firstName;
+                this.LastName = lastName;
+                this.Country = country;
+            }
+            // These statements declare the struct fields
+            public string FirstName;
+            public string LastName;
+            public string Country;
+        }
+        public struct program
+        {
+            // This is the student constructor.
+            public program( string programName, string departmentHead, string degrees)
+            {
+                this.ProgramName = programName;
+                this.DepartmentHead = departmentHead;
+                this.Degrees = degrees;
+             
+            }
+            // These statements declare the struct fields
+            public string ProgramName;
+            public string DepartmentHead;
+            public string Degrees;
+        
+        }
+        public struct course
+        {
+            // This is the student constructor.
+            public course(string courseName, string courseTeacher, string creditsrequired)
+            {
+                this.CourseName = courseName;
+                this.CourseTeacher = courseTeacher;
+                this.Creditsrequired = creditsrequired;
+               
+            }
+            // These statements declare the struct fields
+            public string CourseName;
+            public string CourseTeacher;
+            public string Creditsrequired;
+    
+        }
         #region Mod3HelpingMethods
 
-       
+
         private static void ValidateStudent()
         {
             //an exception will be thrown
