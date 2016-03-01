@@ -11,8 +11,7 @@ namespace Dev204
     {
         static void Main(string[] args)
         {
-   
-
+       
             Console.ReadLine(); // This line to keep the consol running to veiw the output.
         }
     }

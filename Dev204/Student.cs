@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections;
+
 
 namespace Dev204
 {
@@ -12,6 +10,7 @@ namespace Dev204
 
         public Student()
         {
+          
             NoOfStudentsEnrolled++;
         }
 
@@ -20,6 +19,7 @@ namespace Dev204
             Console.WriteLine("Test 's been taken ");
         }
 
+       public Stack Grades = new Stack();
 
         public string AddressLine { get; set; }
     }
