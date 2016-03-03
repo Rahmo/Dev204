@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 
 namespace Dev204
@@ -19,7 +20,7 @@ namespace Dev204
             Console.WriteLine("Test 's been taken ");
         }
 
-       public Stack Grades = new Stack();
+        public Stack<string> Grades = new Stack<string>();
 
         public string AddressLine { get; set; }
     }
